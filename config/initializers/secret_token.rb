@@ -15,7 +15,7 @@ def secure_token
 	token_file = Rails.root.join('.secret')
 	if File.exists?(token_file)
 		#use existing token
-		file.read(token_file).chomp
+		File.read(token_file).chomp
 	else
 		#generate a token
 		token = SecureRandom.hex(64)
